@@ -18,7 +18,10 @@ openssl req \
   -key all/my-private-root-ca.privkey.pem \
   -days 1024 \
   -out all/my-private-root-ca.cert.pem \
-  -subj "/C=US/ST=Utah/L=Provo/O=NSS Security/CN=nss.team"
+  -subj "/C=US/ST=Tennessee/L=Nashville/O=NSS Security/CN=nss.team" \
+  -reqexts SAN \
+  -config <(cat /etc/ssl/openssl.cnf \
+        <(printf "\n[SAN]\nsubjectAltName=DNS:*example.com")) \
 
 # Create a Device Certificate for each domain,
 # such as example.com, *.example.com, awesome.example.com
@@ -31,7 +34,7 @@ openssl genrsa \
 openssl req -new \
   -key all/privkey.pem \
   -out all/csr.pem \
-  -subj "/C=US/ST=Utah/L=Provo/O=NSS Security/CN=${FQDN}/SAN=dns:${FQDN}"
+  -subj "/C=US/ST=Utah/L=Provo/O=NSS Security/CN=${FQDN}"
 
 # Sign the request from Device with your Root CA
 openssl x509 \
@@ -41,6 +44,7 @@ openssl x509 \
   -CAcreateserial \
   -out all/cert.pem \
   -days 500
+
 
 # Put things in their proper place
 rsync -a all/{privkey,cert}.pem server/

@@ -46,5 +46,4 @@ Visit [http://localhost:2000](http://localhost:2000) and start the `spyproxy` se
 
 ## Verify Proxy Service is Running
 
-
-Visit [http://spyproxy.localhost:6060](http://spyproxy.localhost:6060) you should get a message from the browser about how you are visiting an unsafe site. Allow the browser to continue to the site.
+Visit [https://proxy.localhost:6060/student/commit/https://api.github.com/users/stevebrownlee/events](https://proxy.localhost:6060/student/commit/https://api.github.com/users/stevebrownlee/events) you should get a message from the browser about how you are visiting an unsafe site. Allow the browser to continue to the site. Once that's done, you should see a list of recent events.
