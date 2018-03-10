@@ -25,5 +25,8 @@
     "express": "^4.16.2",
     "needle": "^2.1.0",
     "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "ssl-root-cas": "^1.2.5"
   }
 }
