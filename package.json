@@ -12,18 +12,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BlaiseRoberts/proxy-server.git"
+    "url": "git@github.com:megducharme/studentCommitTrackerProxy.git"
   },
-  "author": "",
+  "author": "Meg Ducharme",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BlaiseRoberts/proxy-server/issues"
+    "url": "https://github.com/megducharme/studentCommitTrackerProxy/issues"
   },
-  "homepage": "https://github.com/BlaiseRoberts/proxy-server#readme",
+  "homepage": "https://github.com/megducharme/studentCommitTrackerProxy#readme",
   "dependencies": {
     "basic-auth": "^2.0.0",
     "express": "^4.16.2",
     "needle": "^2.1.0",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "ssl-root-cas": "^1.2.5"
   }
 }
